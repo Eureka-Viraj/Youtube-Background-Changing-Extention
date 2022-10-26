@@ -29,16 +29,19 @@ So the first dependency is, we want intelli sense (autocompletion) for the Googl
 an NPM type, which is:
 "@types/chrome" and this will install our types for the project. As you can see, types chrome have been
 added to the dependencies and we can also see that the log file has been created.  
+![vs code cmd](https://user-images.githubusercontent.com/91491296/197931256-1d081d7f-f477-4afc-81eb-1f041f96b0ee.png)
 We can just ignore it for now.
 And also the node modules which contains the packages . The next step is to go to the chrome extension which is located under "chrome://extensions" and we can see our extensions here.
 We have to turn on the developer mode.
 So we will be able to load our extensions and debug them inside the chrome and also get the real time feedback. For the project we'll just require a small knowledge of JavaScript and also JQuery and other than that you should be pretty much good to go This was the set up the project and I hope you could follow along and then we can just get started and create some chrome extension. So let's do that.
- 
+ ![image](https://user-images.githubusercontent.com/91491296/197931344-15c34ad4-1301-45fa-a20f-86248af84856.png)
+
 
  
 **What is Extension!!**
 
 So the chrome extension is the small software program which customize the browsing experience of the user. We can say that it can either enchance or add new feature to the browser and tailor the user experience.
+![image](https://user-images.githubusercontent.com/91491296/197931372-a188e479-bec4-4de3-a10d-2560c1a5926b.png)
 Ex: Ad Blocker or Adobe reader or JSON viewer. 
 These extension are just buit with the HTML, JavaScript and CSS, there is really no magic.
 Extension 4 different types:
@@ -46,6 +49,7 @@ Extension 4 different types:
 2.	Content Scripts 
 3.	Options page
 4.	UI elements.
+
 At the end the extensions which we are submitting to the chrome web store are just the bundle of HTML, CSS, JavaScript and images if you have any and it is zipped into “.crx” file which then user can download and install we can distribute the extension through the developer dashboard and then of course publish it to the Chrome Webstore, 
 
 
@@ -79,12 +83,13 @@ Then press on the load unpacked
 
 
 After that navigate the folder for the extension.
+![hit select Folder](https://user-images.githubusercontent.com/91491296/197931449-35ee3f87-9778-48cd-bd38-0e19da6fef39.png)
  hit select Folder.
 After that we can see the exptension name description and version. As we have mentioned in the manifest.json file
+ ![image](https://user-images.githubusercontent.com/91491296/197931495-f11fa08f-b47e-4708-a1f5-f5cd8e049442.png)
  
-
 Right now the extension is enabled, but actually it’s not doing anything. So the manifest file is enough to tell the browser what your extension consists of and then you can load it and just use it.
-If you head to the actual documentation [Documentation of extension](https://developer.chrome.com/docs/extensions/mv3/manifest/), we can find out there are much more fields, but right now they are not needed. 
+If you head to the actual documentation [Documentation of manifest file extension](https://developer.chrome.com/docs/extensions/mv3/manifest/) we can find out there are much more fields, but right now they are not needed. 
 
 
 ### Background Scripts:
@@ -114,11 +119,12 @@ chrome.bookmarks.onCreated.addListener(() => {
 })
 ```
 
+![image](https://user-images.githubusercontent.com/91491296/197931682-b7e46316-3375-4151-97f5-8b763535c2e5.png)
 After this on the chrome extension page we will be getting one error on the page.
- 
+ ![image](https://user-images.githubusercontent.com/91491296/197931648-ae7dc1ee-ab7c-4257-a064-78f53280efec.png)
  because we have not given the persmission in manifest.json file so for that we have to read the [The manifest reference link](https://developer.chrome.com/docs/extensions/mv3/manifest/) this doc and copy paste the persmission line.
 
-Background scripts are used to register the listeners and wait for a specific event to happen. When the event occurs, you react appropriately. Also, note that a lot of these Chrome APIs, they are, most of them only available through the background scripts because background script is the one which is responsible for reacting to the events which occurs over time, such as own installed on created, bookmarks, on created, and all these interesting things. So you can see by just tapping the chrome to which properties or namespaces you have access to. And there is a lot of them, there is cookies, devtools, page actions. So there is many, many of them and you can just access the ones which you are required to. But the background scripts does not really do much without the content script. So let’s move on to the next part, which is the content script.
+ Background scripts are used to register the listeners and wait for a specific event to happen. When the event occurs, you react appropriately. Also, note that a lot of these Chrome APIs, they are, most of them only available through the background scripts because background script is the one which is responsible for reacting to the events which occurs over time, such as own installed on created, bookmarks, on created, and all these interesting things. So you can see by just tapping the chrome to which properties or namespaces you have access to. And there is a lot of them, there is cookies, devtools, page actions. So there is many, many of them and you can just access the ones which you are required to. But the background scripts does not really do much without the content script. So let’s move on to the next part, which is the content script.
 
 
 ### Content Scripts:
