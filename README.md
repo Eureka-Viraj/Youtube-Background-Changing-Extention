@@ -74,9 +74,10 @@ Add:
 These things
 Currently in the manifest file, it is required to specify the manifest version name of the extension and also version of the extension. Then there are recommended fields such as description and then the icons for our extensions. But we don't have them yet, so we are not going to specify that.
 
-Now let’s go back to the chrome://extensions/ turn on the developer mode.
+Now let’s go back to the [chrome extension](chrome://extensions/) turn on the developer mode.
 Then press on the load unpacked 
- 
+
+
 After that navigate the folder for the extension.
  hit select Folder.
 After that we can see the exptension name description and version. As we have mentioned in the manifest.json file
@@ -102,8 +103,9 @@ Now we have to create the background script background checks.
 chrome.runtime.onInstalled.addListener(()=> {
     console.log('installed mother');
 })
-
+```
 After adding this we can see the console elements and all other stuff on our extension.
+```
 chrome.runtime.onInstalled.addListener(()=> {
     console.log('installed mother');
 })
